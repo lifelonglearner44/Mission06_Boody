@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Mission6.Models;
+using Mission06_Boody.Models;
 using System.Diagnostics;
 
 namespace Mission6.Controllers
@@ -29,15 +29,11 @@ namespace Mission6.Controllers
 
         }
 
-        public IActionResult DatingApplication(Application response)
-        {
-            return View(responsel);
-        }
+        //public IActionResult DatingApplication(Application response)
+        //{
+        //    return View(responsel);
+        //}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+     
     }
 }
