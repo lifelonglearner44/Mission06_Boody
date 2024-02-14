@@ -25,6 +25,13 @@ namespace Mission6.Controllers
         public IActionResult Form()
         {
             return View();
+
+
+        }
+
+        public IActionResult DatingApplication(Application response)
+        {
+            return View(responsel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
