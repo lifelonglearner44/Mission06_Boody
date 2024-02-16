@@ -1,12 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using Mission06_Boody.Models;
-using System.Diagnostics;
 
 namespace Mission06_Boody.Controllers
 {
     public class HomeController : Controller
     {
-      
+
+        private readonly MovieContext _context;
+
+        public HomeController(MovieContext context)
+        {
+            _context = context;
+        }
 
         public IActionResult Index()
         {
@@ -28,6 +33,10 @@ namespace Mission06_Boody.Controllers
         [HttpPost]
         public IActionResult Form(Movie response)
         {
+           
+                _context.Movie.Add(response);
+                _context.SaveChanges();
+            
             ViewData["response"] = response;
 
             return View("Confirmation");
