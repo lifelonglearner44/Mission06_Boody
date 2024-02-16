@@ -1,17 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
-using Mission6.Models;
+using Mission06_Boody.Models;
 using System.Diagnostics;
 
 namespace Mission6.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+      
 
         public IActionResult Index()
         {
@@ -22,6 +17,7 @@ namespace Mission6.Controllers
         {
             return View();
         }
+        [HttpGet]
         public IActionResult Form()
         {
             return View();
@@ -29,15 +25,11 @@ namespace Mission6.Controllers
 
         }
 
-        public IActionResult DatingApplication(Application response)
+        [HttpPost]
+        public IActionResult Form(Movie response)
         {
-            return View(responsel);
+            return View(response);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
