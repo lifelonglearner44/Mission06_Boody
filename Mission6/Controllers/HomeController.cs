@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Mission06_Boody.Models;
 using System.Diagnostics;
 
-namespace Mission6.Controllers
+namespace Mission06_Boody.Controllers
 {
     public class HomeController : Controller
     {
@@ -28,7 +28,9 @@ namespace Mission6.Controllers
         [HttpPost]
         public IActionResult Form(Movie response)
         {
-            return View(response);
+            ViewData["response"] = response;
+
+            return View("Confirmation");
         }
 
     }
