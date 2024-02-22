@@ -8,9 +8,9 @@ namespace Mission06_Boody.Controllers
 
         private readonly MovieContext _context;
 
-        public HomeController(MovieContext context)
+        public HomeController(MovieContext temp)
         {
-            _context = context;
+            _context = temp;
         }
 
         public IActionResult Index()
