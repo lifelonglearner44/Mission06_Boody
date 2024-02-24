@@ -24,7 +24,7 @@ namespace Mission06_Boody.Models
         public string Director { get; set; }
         [Required]
 
-        public double Rating { get; set; }
+        public string Rating { get; set; }
 
         public bool? Edited { get; set; }
         public string? LentTo { get; set; }
